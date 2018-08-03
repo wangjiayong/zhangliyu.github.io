@@ -87,10 +87,10 @@
      @keyframes myfirst
     {
     0%   {left:0px; top:15px;}
-    25%  {left:200px; top:15px;}
-    50%  {left:200px; top:200px;}
+    25%  {left:180px; top:15px;}
+    50%  {left:180px; top:200px;}
     75%  {left:0px; top:200px;}
-    100% {left:0px; top:0px;}
+    100% {left:0px; top:15px;}
     }
     </style>
 </head>
@@ -98,13 +98,13 @@
     <div class="container">
         <div class="frame">
             <div class="obj">
-             小姐姐处对象好不啦
+             哈哈哈哈哈啊哈哈哈
             </div>
             <div class="image">
                 <img src="./img/xjj.jpg" alt="love U">
             </div>
           <div class="top">
-              <span>来自一位喜欢你的小哥哥</span>
+              <span>来自一位北方的狼</span>
             <button class="topClose">×</button>
           </div>
           <div class="btn">
@@ -114,11 +114,29 @@
         </div>
     </div>
     <script>
+        var arr = [
+            '我爱你！',
+        '你是我的天使！',
+        '我会永远牵着你的手！',
+        '你是我的唯一！',
+        '如果全世界我的可以忘记',
+        '至少还有你值得我珍惜！',
+        '我是你的守护天使！',
+        '我的肩膀是你唯一的依靠！',
+        '爱你不是挂在嘴边，要放在心里！',
+        '工资都给你！',
+        '我的眼里只有你！',
+        '保大'
+        ],i=0;
      document.querySelector('.topClose').onclick=function() {
         alert('不同意是关不了的哟')
      }
      document.querySelector('.close').onclick=function() {
-         alert(1)
+         if (i===11) {
+            i=0
+         }
+         alert(arr[i])
+         i+=1
      }
      document.querySelector('.ok').onclick=function() {
         alert('亲亲抱抱，举高高')     
