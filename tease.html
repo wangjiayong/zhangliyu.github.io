@@ -28,10 +28,9 @@
 </head>
 <body>
 	<!--===音乐：原谅——刘瑞琦======================================-->
-	<audio autoplay>
-			<source src="music/forgive.mp3"/>
-	</audio>  
-	
+	<audio id="Jaudio" autoplay="autoplay" controls="controls" loop="loop" preload="auto">
+			<source src="mp3/gbqq.mp3" type="audio/mpeg">
+		</audio>
 	<!--==============================================================-->
 	<div id="main">
         <div id="error">
@@ -70,6 +69,22 @@
 
 	<!--==========================================================-->
     <script>
+		function audioAutoPlay(id){
+    var audio = document.getElementById(id),
+        play = function(){
+        audio.play();
+        document.removeEventListener("touchstart",play, false);
+		};
+		audio.play();
+		document.addEventListener("WeixinJSBridgeReady", function () {//微信
+		play();
+		}, false);
+		document.addEventListener('YixinJSBridgeReady', function() {//易信
+				play();
+			}, false);
+		document.addEventListener("touchstart",play, false);
+	}
+	audioAutoPlay('Jaudio');
 	    (function(){
 	        var canvas = $('#canvas');
 	        if (!canvas[0].getContext) {
